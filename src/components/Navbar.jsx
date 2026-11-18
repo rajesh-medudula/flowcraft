@@ -1,9 +1,8 @@
-import { isPending } from "@reduxjs/toolkit"
 import { Link, NavLink } from "react-router-dom"
 
 const Navbar = () => {
   return (
-    <header className="h-12.5 bg-gray-800 text-white px-5">
+    <header className="md:hidden h-12.5 bg-gray-800 text-white px-5">
       <nav className="h-full flex items-center">
         <ul className="w-full flex gap-5">
           <li className="mr-auto">
