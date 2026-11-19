@@ -12,8 +12,10 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.14.0",
     "@tailwindcss/vite": "^4.3.5",
+    "@xyflow/react": "^13.0.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-hook-form": "^7.92.0",
     "react-redux": "^9.3.1",
     "react-router-dom": "^7.18.5",
     "tailwindcss": "^4.3.5"
