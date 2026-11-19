@@ -4,7 +4,7 @@ import { router } from './routes/router'
 
 const App = () => {
   return (
-    <div className="h-screen grid grid-rows-[auto_1fr] md:grid-cols-[auto_1fr]">
+    <div className="min-h-dvh">
       <RouterProvider router={router}/>
     </div>
   )

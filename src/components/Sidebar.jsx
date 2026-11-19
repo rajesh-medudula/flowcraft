@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom"
 
 const Sidebar = () => {
   return (
-    <aside className="hidden md:block h-screen flex flex-col  bg-gray-800 text-white p-5">
+    <aside className="hidden md:flex h-full flex-1 flex-col  bg-gray-800 text-white p-5">
       <nav className="h-full flex">
         <ul className="w-full flex flex-col gap-5">
           <li className="mr-auto">

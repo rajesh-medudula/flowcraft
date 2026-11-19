@@ -8,7 +8,7 @@ const Home = () => {
   };
 
   return (
-    <section className="bg-gray-900 text-white flex flex-col justify-center items-center gap-10">
+    <section className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center gap-10">
       <div>
         <h1 className="text-5xl font-bold">FLOW CRAFT</h1>
         <em>Visual workflow</em>
