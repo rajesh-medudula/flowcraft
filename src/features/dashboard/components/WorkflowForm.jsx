@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toggleModal } from "../dashboardSlice";
 import { useForm } from "react-hook-form";
-import { createWorkflow } from "./WorkflowsSlice";
+import { createWorkflow } from "./workflowsSlice";
 
 
 const createWorkflowEntity = (workflow) => {

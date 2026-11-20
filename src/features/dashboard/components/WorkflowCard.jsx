@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteWorkflow } from "./WorkflowsSlice";
+import { deleteWorkflow } from "./workflowsSlice";
+import { useNavigate } from "react-router-dom";
 
 // const workflowTestData = {
 //   id: 1,
@@ -35,11 +36,16 @@ const Menu = ({id}) => {
 
 
 const WorkflowCard = ({workflow}) => {
+  const navigate = useNavigate();
   const [menuActive, setMenuActive] = useState(false);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
+
+  const handleOpenEditor = (id) => {
+    navigate(`/workflows/${id}`)
+  }
 
   return (
     <div className="bg-gray-700 p-2 flex flex-col gap-2 relative">
@@ -74,7 +80,7 @@ const WorkflowCard = ({workflow}) => {
         </div>
 
         <div className="flex justify-center items-center border border-gray-500">
-          <button className="cursor-pointer bg-gray-500 px-1">Open Editor</button>
+          <button onClick={() => handleOpenEditor(workflow.id)} className="cursor-pointer bg-gray-500 px-1">Open Editor</button>
         </div>
       </div>
       <div className="flex">
