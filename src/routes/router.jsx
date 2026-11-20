@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import Dashboard from "../features/dashboard/Dashboard";
 import FullLayout from "../layouts/FullLayout";
-import WorkflowEditor from "../features/workflow/workflowEditor";
+import WorkflowEditor from "../features/workflow/WorkflowEditor";
 
 export const router = createBrowserRouter([
   {

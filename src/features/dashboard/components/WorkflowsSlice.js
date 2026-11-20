@@ -13,12 +13,21 @@ const workflowSlice = createSlice({
     },
     deleteWorkflow: (state, action) => {
       if (action.payload) {
-        const updated = state.workflows.filter((workflow) => workflow.id !== action.payload);
-        state.workflows = updated;
+        const updatedWorkflows = state.workflows.filter((workflow) => workflow.id !== action.payload);
+        state.workflows = updatedWorkflows;
       }
+    },
+    updateCanvas: (state, action) => {
+      const {workflowId, nodes, edges} = action.payload;
+
+      const workflow = state.workflows.find((workflow) => workflow.id === workflowId);
+      if (!workflow) return;
+
+      workflow.nodes = nodes;
+      workflow.edges = edges;
     }
   }
 })
 
-export const { createWorkflow, deleteWorkflow } = workflowSlice.actions;
+export const { createWorkflow, deleteWorkflow, updateCanvas } = workflowSlice.actions;
 export default workflowSlice.reducer;

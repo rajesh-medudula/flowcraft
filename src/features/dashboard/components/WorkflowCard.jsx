@@ -3,20 +3,6 @@ import { useDispatch } from "react-redux";
 import { deleteWorkflow } from "./workflowsSlice";
 import { useNavigate } from "react-router-dom";
 
-// const workflowTestData = {
-//   id: 1,
-//   title: "Customer Data Trasform",
-//   description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vel
-//         facilis cupiditate ipsum labore! Amet autem molestias, sapiente, fuga
-//         illo reiciendis est possimus odio in corrupti labore excepturi
-//         repudiandae. Ullam`,
-//   status: "Deployed",
-//   nodes: [{}, {}, {}],
-//   created: "10 Nov, 2026",
-//   lastupdated: "2 hours Ago",
-// };
-
-
 const Menu = ({id}) => {
   const dispatch = useDispatch();
 

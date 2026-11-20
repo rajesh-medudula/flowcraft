@@ -25,7 +25,6 @@ export const store = configureStore({
 store.subscribe(() => {
   try {
     const state = store.getState();
-
     localStorage.setItem("flowcraft19", JSON.stringify(state));
   } catch (err) {
     console.error("Failed to save flowcraft data", err);

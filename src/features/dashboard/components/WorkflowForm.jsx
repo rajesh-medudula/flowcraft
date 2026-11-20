@@ -25,6 +25,7 @@ const createWorkflowEntity = (workflow) => {
         data: { label: "INPUT", description: "Input data JSON" },
       },
     ],
+    edges: [],
     created: formatedDate,
     lastupdated: "-",
   };
