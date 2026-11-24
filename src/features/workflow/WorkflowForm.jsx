@@ -17,14 +17,7 @@ const createWorkflowEntity = (workflow) => {
     title: workflow.title,
     description: workflow.description,
     status: "Draft",
-    nodes: [
-     {
-    id: '1',
-    type: 'input',
-    position: { x: 100, y: 100 },
-    data: { label: 'Processor', value: 42, active: true },
-  },
-    ],
+    nodes: [],
     edges: [],
     created: formatedDate,
     lastupdated: "-",

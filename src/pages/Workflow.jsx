@@ -1,28 +1,23 @@
 import { ReactFlow, addEdge, Background } from "@xyflow/react";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useOutletContext } from "react-router-dom";
 import {
   updateNodes,
   updateEdges,
   updateConnection,
+  addNode,
 } from "../features/workflow/workflowsSlice";
 
 const Workflow = () => {
   const dispatch = useDispatch();
   const { workflowId } = useOutletContext();
-  const workflows = useSelector((state) => state.workflows.workflows);
-  const currentWorkflow = workflows.find(
-    (workflow) => workflow.id === workflowId,
-  );
-
-  const [nodes, setNodes] = useState(currentWorkflow?.nodes || []);
-  const [edges, setEdges] = useState(currentWorkflow?.edges || []);
-
+  const nodes = useSelector((state) => state.workflows.workflows.find((workflow) => workflow.id === workflowId).nodes);
+  const edges = useSelector((state) => state.workflows.workflows.find((workflow) => workflow.id === workflowId).edges);
+  
   const onNodesChange = useCallback(
     (changes) => {
       const updatedNodes = changes.applyTo(nodes);
-      setNodes(updatedNodes);
       dispatch(updateNodes({id: workflowId, nodes: updatedNodes}));
     },
     [dispatch, nodes, workflowId],
@@ -31,7 +26,6 @@ const Workflow = () => {
   const onEdgesChange = useCallback(
     (changes) => {
       const updatedEdges = changes.applyTo(edges);
-      setEdges(updatedEdges);
       dispatch(updateEdges({id: workflowId, edges: updatedEdges}));
     },
     [dispatch, edges, workflowId],
@@ -40,11 +34,23 @@ const Workflow = () => {
   const onConnect = useCallback(
     (connection) => {
       const updatedEdges = addEdge(connection, edges);
-      setEdges(updatedEdges);
       dispatch(updateConnection({id: workflowId, edges: updatedEdges}));
     },
     [dispatch, edges, workflowId],
   );
+
+  const onDragOver = useCallback((event) => {
+    event.preventDefault();
+  }, [])
+
+  const onDrop = useCallback((event) => {
+    event.preventDefault();
+    const data = event.dataTransfer.getData("application/node");
+    const node = JSON.parse(data);
+    const finalNode = {...node, id: String(crypto.randomUUID())}
+
+    dispatch(addNode({id: workflowId, node: finalNode}));
+  }, [dispatch, workflowId]);
 
   return (
     <section className="h-full w-full">
@@ -54,6 +60,8 @@ const Workflow = () => {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        onDragOver={(event) => onDragOver(event)}
+        onDrop={(event) => onDrop(event)}
         fitView
       >
         <Background></Background>

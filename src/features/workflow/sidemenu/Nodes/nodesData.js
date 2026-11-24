@@ -1,23 +1,10 @@
 export const nodes = [
   {
     id: 1,
-    title: "Manual Trigger",
-    category: "trigger",
-    data: {
-      id: 1,
-      type: 'trigger',
-      position: {x: 100, y: 50},
-      data: {
-        label: 'Trigger Step',
-      }
-    }
-  },
-  {
-    id: 2,
     title: "Input",
     category: "trigger",
     data: {
-      id: 2,
+      id: 1,
       type: 'input',
       position: {x: 100, y: 50},
       data: {
@@ -26,11 +13,11 @@ export const nodes = [
     }
   },
   {
-    id: 3,
+    id: 2,
     title: "Filter",
     category: "dataprocessing",
     data: {
-      id: 3,
+      id: 2,
       type: 'filter',
       position: {x: 120, y: 50},
       data: {
@@ -39,11 +26,11 @@ export const nodes = [
     }
   },
   {
-    id: 4,
+    id: 3,
     title: "Select Fields",
     category: "dataprocessing",
     data: {
-      id: 4,
+      id: 3,
       type: 'selected-fields',
       position: {x: 120, y: 50},
       data: {
@@ -52,24 +39,24 @@ export const nodes = [
     }
   },
   {
-    id: 5,
-    title: "Rename",
+    id: 4,
+    title: "Remove Field",
     category: "dataprocessing",
     data: {
-      id: 5,
-      type: 'rename',
+      id: 4,
+      type: 'remove',
       position: {x: 100, y: 50},
       data: {
-        label: 'Rename Fields',
+        label: 'Remove Fields',
       }
     }
   },
   {
-    id: 6,
+    id: 5,
     title: "Add Field",
     category: "dataprocessing",
     data: {
-      id: 6,
+      id: 5,
       type: 'add-field',
       position: {x: 100, y: 50},
       data: {
@@ -78,11 +65,11 @@ export const nodes = [
     }
   },
   {
-    id: 7,
+    id: 6,
     title: "Condition",
     category: "logic",
     data: {
-      id: 7,
+      id: 6,
       type: 'condition',
       position: {x: 100, y: 50},
       data: {
@@ -91,11 +78,11 @@ export const nodes = [
     }
   },
   {
-    id: 8,
+    id: 7,
     title: "Switch",
     category: "logic",
     data: {
-      id: 8,
+      id: 7,
       type: 'switch',
       position: {x: 100, y: 50},
       data: {
@@ -104,11 +91,11 @@ export const nodes = [
     }
   },
   {
-    id: 9,
+    id: 8,
     title: "Sort",
     category: "transform",
     data: {
-      id: 9,
+      id: 8,
       type: 'sort',
       position: {x: 100, y: 50},
       data: {
@@ -117,11 +104,11 @@ export const nodes = [
     }
   },
   {
-    id: 10,
+    id: 9,
     title: "Limit",
     category: "transform",
     data: {
-      id: 10,
+      id: 9,
       type: 'limit',
       position: {x: 100, y: 50},
       data: {
@@ -130,11 +117,11 @@ export const nodes = [
     }
   },
   {
-    id: 11,
+    id: 10,
     title: "Output",
     category: "output",
     data: {
-      id: 11,
+      id: 10,
       type: 'output',
       position: {x: 100, y: 50},
       data: {
