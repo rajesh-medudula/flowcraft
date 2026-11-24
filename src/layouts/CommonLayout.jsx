@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom"
 import Sidebar from "../components/Sidebar"
 import Navbar from "../components/Navbar";
 
-const MainLayout = () => {
+const CommonLayout = () => {
   return <>
   <div className="grid min-h-dvh
       grid-rows-[auto_minmax(0,1fr)]
@@ -17,4 +17,4 @@ const MainLayout = () => {
   </>
 }
 
-export default MainLayout;
+export default CommonLayout;

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom"
 import { useParams } from "react-router-dom"
-import WorkflowSidebar from "../components/WorkflowSidebar";
+import WorkflowSidebar from "../features/workflow/sidemenu/WorkflowSidebar";
 
-const FullLayout = () => {
+const WideLayout = () => {
   const {workflowId} = useParams();
 
   return (
@@ -18,4 +18,4 @@ const FullLayout = () => {
   )
 }
 
-export default FullLayout
+export default WideLayout;

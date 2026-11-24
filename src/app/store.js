@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import dashboardReducer from "../features/dashboard/dashboardSlice";
-import workflowsReducer from "../features/dashboard/components/WorkflowsSlice";
+import workflowsReducer from "../features/workflow/workflowsSlice";
 
 const loadState = () => {
   try {
@@ -13,7 +12,6 @@ const loadState = () => {
 }
 
 const rootReducer = combineReducers({
-  dashboard: dashboardReducer,
   workflows: workflowsReducer,
 })
 

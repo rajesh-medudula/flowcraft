@@ -1,33 +1,33 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
+import CommonLayout from "../layouts/CommonLayout";
 import Home from "../pages/Home";
-import Dashboard from "../features/dashboard/Dashboard";
-import FullLayout from "../layouts/FullLayout";
-import WorkflowEditor from "../features/workflow/WorkflowEditor";
+import Dashboard from "../pages/Dashboard";
+import WideLayout from "../layouts/WideLayout";
+import Workflow from "../pages/Workflow";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout/>,
+    element: <CommonLayout />,
     children: [
       {
         index: true,
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: "dashboard",
-        element: <Dashboard/>
-      }
-    ]
+        element: <Dashboard />,
+      },
+    ],
   },
   {
     path: "workflows/:workflowId",
-    element: <FullLayout/>,
+    element: <WideLayout />,
     children: [
       {
         index: true,
-        element: <WorkflowEditor/>
-      }
-    ]
-  }
-])
+        element: <Workflow />,
+      },
+    ],
+  },
+]);

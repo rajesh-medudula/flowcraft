@@ -4,7 +4,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleNav = () => {
-    navigate("/dashboard");
+    navigate("dashboard");
   };
 
   return (
