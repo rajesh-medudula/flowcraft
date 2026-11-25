@@ -5,12 +5,42 @@ export const nodes = [
     category: "trigger",
     data: {
       id: 1,
-      type: 'input',
-      position: {x: 100, y: 50},
+      type: "input",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'JSON Input',
-      }
-    }
+        label: "JSON Input",
+        maindata: [
+          {
+            id: 1,
+            name: "Raj",
+            age: 22,
+            role: "developer",
+            salary: 35000,
+          },
+          {
+            id: 2,
+            name: "Sam",
+            age: 17,
+            role: "designer",
+            salary: 25000,
+          },
+          {
+            id: 3,
+            name: "John",
+            age: 25,
+            role: "developer",
+            salary: 45000,
+          },
+          {
+            id: 4,
+            name: "Anu",
+            age: 20,
+            role: "designer",
+            salary: 30000,
+          },
+        ],
+      },
+    },
   },
   {
     id: 2,
@@ -18,12 +48,15 @@ export const nodes = [
     category: "dataprocessing",
     data: {
       id: 2,
-      type: 'filter',
-      position: {x: 120, y: 50},
+      // type: "filter",
+      position: { x: 120, y: 50 },
       data: {
-        label: 'Filter',
-      }
-    }
+        label: "Filter",
+        config: {
+          operation: "F1"
+        }
+      },
+    },
   },
   {
     id: 3,
@@ -31,12 +64,12 @@ export const nodes = [
     category: "dataprocessing",
     data: {
       id: 3,
-      type: 'selected-fields',
-      position: {x: 120, y: 50},
+      // type: "selected-fields",
+      position: { x: 120, y: 50 },
       data: {
-        label: 'Select Fields',
-      }
-    }
+        label: "Select Fields",
+      },
+    },
   },
   {
     id: 4,
@@ -44,12 +77,12 @@ export const nodes = [
     category: "dataprocessing",
     data: {
       id: 4,
-      type: 'remove',
-      position: {x: 100, y: 50},
+      // type: "remove",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'Remove Fields',
-      }
-    }
+        label: "Remove Fields",
+      },
+    },
   },
   {
     id: 5,
@@ -57,12 +90,12 @@ export const nodes = [
     category: "dataprocessing",
     data: {
       id: 5,
-      type: 'add-field',
-      position: {x: 100, y: 50},
+      // type: "add-field",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'Add Field',
-      }
-    }
+        label: "Add Field",
+      },
+    },
   },
   {
     id: 6,
@@ -70,12 +103,12 @@ export const nodes = [
     category: "logic",
     data: {
       id: 6,
-      type: 'condition',
-      position: {x: 100, y: 50},
+      // type: "condition",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'Condition',
-      }
-    }
+        label: "Condition",
+      },
+    },
   },
   {
     id: 7,
@@ -83,12 +116,12 @@ export const nodes = [
     category: "logic",
     data: {
       id: 7,
-      type: 'switch',
-      position: {x: 100, y: 50},
+      // type: "switch",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'Switch',
-      }
-    }
+        label: "Switch",
+      },
+    },
   },
   {
     id: 8,
@@ -96,12 +129,12 @@ export const nodes = [
     category: "transform",
     data: {
       id: 8,
-      type: 'sort',
-      position: {x: 100, y: 50},
+      // type: "sort",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'Sort',
-      }
-    }
+        label: "Sort",
+      },
+    },
   },
   {
     id: 9,
@@ -109,12 +142,12 @@ export const nodes = [
     category: "transform",
     data: {
       id: 9,
-      type: 'limit',
-      position: {x: 100, y: 50},
+      // type: "limit",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'Limit',
-      }
-    }
+        label: "Limit",
+      },
+    },
   },
   {
     id: 10,
@@ -122,11 +155,14 @@ export const nodes = [
     category: "output",
     data: {
       id: 10,
-      type: 'output',
-      position: {x: 100, y: 50},
+      type: "output",
+      position: { x: 100, y: 50 },
       data: {
-        label: 'Output',
-      }
-    }
-  }
-]
+        label: "Output",
+        config: {
+          operation: "F10",
+        }
+      },
+    },
+  },
+];

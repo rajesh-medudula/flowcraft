@@ -56,9 +56,20 @@ const workflowSlice = createSlice({
       if (!workflow) return;
 
       workflow.nodes = workflow.nodes.filter((node) => node.id !== nodeId);
+    },
+    updateNodeData: (state, action) => {
+      const {id, nodeId, data} = action.payload;
+      
+      const workflow = state.workflows.find((workflow) => workflow.id === id);
+      if (!workflow) return;
+      
+      const node = workflow.nodes.find((node) => node.id === nodeId);
+      if (!node) return;
+      
+      node.data.maindata = data;
     }
   }
 })
 
-export const { createWorkflow, deleteWorkflow, updateNodes, updateEdges, updateConnection, addNode, deleteNode } = workflowSlice.actions;
+export const { createWorkflow, deleteWorkflow, updateNodes, updateEdges, updateConnection, addNode, deleteNode, updateNodeData } = workflowSlice.actions;
 export default workflowSlice.reducer;
