@@ -1,20 +1,26 @@
-import { ReactFlow, addEdge, Background, Panel } from "@xyflow/react";
+import {
+  ReactFlow,
+  addEdge,
+  Background,
+  Panel,
+} from "@xyflow/react";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useOutletContext } from "react-router-dom";
 import NodesLib from "../features/workflow/Nodes/NodesLib";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Config from "../features/workflow/configpanel/Config";
 import {
   updateNodes,
   updateEdges,
   updateConnection,
   addNode,
   updateNodeData,
+  updateSelectedNode,
 } from "../features/workflow/workflowsSlice";
 import { engine } from "../features/workflow/executions/engine";
 
 const Workflow = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { workflowId } = useOutletContext();
   const nodes = useSelector(
@@ -51,6 +57,21 @@ const Workflow = () => {
     },
     [dispatch, edges, workflowId],
   );
+
+  const onSelectionChange = useCallback(
+    ({ nodes }) => {
+      const firstSelectedNode = nodes[0];
+
+      dispatch(
+        updateSelectedNode({
+          id: workflowId,
+          nodeId: firstSelectedNode?.id ?? null,
+        }),
+      );
+    },
+    [dispatch, workflowId],
+  );
+
   // panel listeners
   const noDropOnDragOver = useCallback((event) => {
     event.preventDefault();
@@ -94,28 +115,34 @@ const Workflow = () => {
   return (
     <section className="h-full w-full">
       <ReactFlow
+        className="text-white"
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
-        onDragOver={(event) => onDragOver(event)}
-        onDrop={(event) => onDrop(event)}
+        onSelectionChange={onSelectionChange}
+        onDragOver={onDragOver}
+        onDrop={onDrop}
         fitView
       >
         <Panel
           position="left"
           className="m-0! py-5 px-5 min-h-screen min-w-25 flex flex-col justify-center bg-gray-800 text-white"
-          onDragOver={(event) => noDropOnDragOver(event)}
-          onDrop={(event) => noDropOnDrop(event)}
+          onDragOver={noDropOnDragOver}
+          onDrop={noDropOnDrop}
         >
-          <button
+          <Link
+            to="/dashboard"
             className="p-2 my-2 text-2xl bg-gray-700 cursor-pointer"
-            onClick={() => navigate("/dashboard")}
           >
             &larr;Go Back
-          </button>
+          </Link>
           <NodesLib />
+        </Panel>
+
+        <Panel position="right-center" className="m-0! bg-gray-800">
+          <Config workflowId={workflowId} />
         </Panel>
 
         <Panel

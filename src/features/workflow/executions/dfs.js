@@ -21,7 +21,6 @@ export const createList = (nodes, edges) => {
 // traversal
 export const dfs = (list, nodeId, data, nodes, initiateUpdate, visited = []) => {
   if (visited.includes(nodeId)) return;
-
   visited.push(nodeId);
   const newData = executor(nodeId, nodes, data, initiateUpdate);
   if (Array.isArray(list[nodeId])) {
