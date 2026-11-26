@@ -5,7 +5,7 @@ const Node = ({ data }) => {
 
   return (
     <button
-      className="bg-gray-700 h-full"
+      className="bg-gray-700 h-full p-2"
       data-id={data.id}
       draggable="true" 
       onDragStart={(event) => onDragStart(event)}

@@ -1,10 +1,10 @@
 import { nodes } from "./nodesData";
 import Node from "./Node";
 
-const NodeLib = () => {
+const NodesLib = () => {
   return (
-    <section>
-      <div className="grid grid-cols-[1fr_1fr] gap-2">
+    <section className="m-auto">
+      <div className="grid grid-cols-[1fr_1fr] md:grid-cols-1  gap-2">
         <div className="flex flex-col gap-2">
           <span className="font-semibold mb-2 text-neutral-200">Trigger</span>
           {nodes.filter((node) => node.category === "trigger").map((node) => <Node key={node.id} data={node}/>)}
@@ -30,4 +30,4 @@ const NodeLib = () => {
   );
 };
 
-export default NodeLib;
+export default NodesLib;
