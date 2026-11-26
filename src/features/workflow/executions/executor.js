@@ -5,11 +5,11 @@ export const executor = (nodeId, nodes, data, initiateUpdate) => {
   const node = nodes.find((node) => node.id === nodeId);
 
   const config = node.data?.config;
-  if (!node || !config || !config?.operation) {
+  if (!node || !config || config.operation === "F1") {
     return data;
   };
   
-  if (config.operation === "F1") {
+  if (config.operation === "F2") {
     const newData = filter(data, config);
     return newData;
   }

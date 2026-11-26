@@ -9,6 +9,9 @@ export const nodes = [
       position: { x: 100, y: 50 },
       data: {
         label: "JSON Input",
+        config: {
+          operation: "F1"
+        },
         maindata: [
           {
             id: 1,
@@ -53,7 +56,10 @@ export const nodes = [
       data: {
         label: "Filter",
         config: {
-          operation: "F1"
+          operation: "F2",
+          field: null,
+          operator: null,
+          value: null,
         }
       },
     },
@@ -68,6 +74,9 @@ export const nodes = [
       position: { x: 120, y: 50 },
       data: {
         label: "Select Fields",
+        config: {
+          operation: "F3"
+        },
       },
     },
   },
@@ -81,6 +90,9 @@ export const nodes = [
       position: { x: 100, y: 50 },
       data: {
         label: "Remove Fields",
+        config: {
+          operation: "F4"
+        },
       },
     },
   },
@@ -94,6 +106,9 @@ export const nodes = [
       position: { x: 100, y: 50 },
       data: {
         label: "Add Field",
+        config: {
+          operation: "F5"
+        },
       },
     },
   },
@@ -107,6 +122,9 @@ export const nodes = [
       position: { x: 100, y: 50 },
       data: {
         label: "Condition",
+        config: {
+          operation: "F6"
+        },
       },
     },
   },
@@ -120,6 +138,9 @@ export const nodes = [
       position: { x: 100, y: 50 },
       data: {
         label: "Switch",
+        config: {
+          operation: "F7"
+        },
       },
     },
   },
@@ -133,6 +154,9 @@ export const nodes = [
       position: { x: 100, y: 50 },
       data: {
         label: "Sort",
+        config: {
+          operation: "F8"
+        },
       },
     },
   },
@@ -146,6 +170,9 @@ export const nodes = [
       position: { x: 100, y: 50 },
       data: {
         label: "Limit",
+        config: {
+          operation: "F9"
+        },
       },
     },
   },
