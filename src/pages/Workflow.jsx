@@ -141,7 +141,7 @@ const Workflow = () => {
           <NodesLib />
         </Panel>
 
-        <Panel position="right-center" className="m-0! bg-gray-800">
+        <Panel position="right-bottom" className="m-0! bg-gray-800">
           <Config workflowId={workflowId} />
         </Panel>
 
